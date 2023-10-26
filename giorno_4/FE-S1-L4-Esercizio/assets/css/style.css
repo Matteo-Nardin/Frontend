@@ -1,0 +1,103 @@
+/* IMPOSTAZIONI GENERALI */
+#corpo {
+    margin: 0 10px;
+}
+
+body {
+    background-image: url("FE-S1-L4-Esercizio/assets/img/sfondo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* HEADER */
+
+header {
+    color: white;
+    padding: 20px;
+    background: rgb(105,255,185);
+    background: linear-gradient(3deg, rgba(105,255,185,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header img {
+    width: 200px;
+}
+
+/* MAIN */
+main {
+    margin: 30px 0;
+    background-color: white;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+}
+/* ELEMENTI NEL MAIN - ARTICLE */
+
+
+/* TABELLE */
+article > p:first-of-type {
+    color: grey;
+  }
+
+code {
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+table td, th{
+    padding: 5px;
+    text-align: center;
+}
+
+thead {
+    background-color: blue;
+    color: white;
+}
+
+tbody{
+    border: collapse;
+}
+
+tbody tr:nth-child(even){
+    background-color: lightgrey;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+}
+/* FORM */
+
+section {
+    background-color: lightgrey;
+    padding: 10px;
+}
+
+form input{
+    border: 0px;
+    border-bottom: 1px dashed;
+}
+
+form button{
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+/* ELEMENTI NELL' ASIDE */
+
+.articolo {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: lightgrey;
+    border: 1px solid grey;
+}
+
+/* FOOTER */
+footer {
+    padding: 10px;
+    color: white;
+    background: rgb(2,0,36);
+    background: linear-gradient(3deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 64%, rgba(0,212,255,1) 100%);
+}
