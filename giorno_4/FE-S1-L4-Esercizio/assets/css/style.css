@@ -1,11 +1,13 @@
 /* IMPOSTAZIONI GENERALI */
 #corpo {
     margin: 0 10px;
+    width: 300px;
+    margin: 0 auto;
 }
 
 body {
-    background-image: url("FE-S1-L4-Esercizio/assets/img/sfondo.png");
-    background-repeat: no-repeat;
+    background-image: url("../img/sfondo.png");
+    background-repeat: repeat;
     background-size: contain;
 }
 /* HEADER */
@@ -35,8 +37,6 @@ main {
 }
 /* ELEMENTI NEL MAIN - ARTICLE */
 
-
-/* TABELLE */
 article > p:first-of-type {
     color: grey;
   }
@@ -45,6 +45,18 @@ code {
     background-color: lightgray;
     border-radius: 5px;
     padding: 2px;
+}
+
+/* TABELLE */
+
+
+table {
+    border-bottom: 1px solid blue;
+    border-collapse: collapse;
+}
+
+td, tr {
+    border-bottom: 1px solid rgb(197, 188, 188);
 }
 
 table td, th{
@@ -58,7 +70,7 @@ thead {
 }
 
 tbody{
-    border: collapse;
+    
 }
 
 tbody tr:nth-child(even){
@@ -92,6 +104,10 @@ form button{
     padding: 10px;
     background-color: lightgrey;
     border: 1px solid grey;
+}
+
+.articolo p:nth-child(odd){
+    text-align: right;
 }
 
 /* FOOTER */

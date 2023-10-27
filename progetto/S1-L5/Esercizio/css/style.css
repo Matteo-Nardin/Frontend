@@ -1,0 +1,118 @@
+/* Your styles here */
+body {
+    color: #393d41;
+    font-size: 1.2rem;
+    font-family: "Open sans";
+    line-height: 1.65;
+
+    
+    /* width: 300px; */
+    margin: 0 auto;
+}
+
+h1 {
+    color: #25a2c3;
+}
+
+h3 {
+    color: #25a2c3;
+}
+
+/* HEADER */
+header {
+    height: 200px;
+    background-color: black;
+    text-align: center;
+}
+
+header img {
+    width: 150px;
+}
+
+#corso {
+    text-align: center;
+
+    background-image: url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+}
+
+#corso button{
+    color: white;
+    background-color: red;
+    border: 0px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* ARTICLE */
+article {
+    text-align: center;
+    padding: 20px;
+}
+
+article img{
+    border-radius: 50%;
+    width: 300px;
+}
+
+/* SECTION */
+section {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#mario {
+    padding: 20px;
+}
+
+#mario p{
+    margin: 0;
+}
+
+#mario p:first-child{
+    font-size: 2rem;
+}
+/* ASIDE */
+aside div{
+    border: 1px solid #dee1e3;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    margin: 20px auto;
+}
+
+aside img{
+    width: 300px;
+}
+
+aside h3{
+    color: #8484dd;
+}
+
+/* FOOTER */
+footer {
+    background-color: #25a2c3;
+    text-align: center;
+    color: #c8e7f0;
+}
+
+footer h2{
+    color: white;
+}
+
+footer a{
+    color: #c8e7f0
+}
+
+#footer_link{
+    border-top: 1px solid white;
+    padding: 20px;
+    width: 200px;
+    margin: 0 auto;
+    font-size: 0.8rem;
+}
