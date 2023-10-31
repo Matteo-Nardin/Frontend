@@ -7,6 +7,15 @@
   let b = 4;
 
   a > b ? console.log( a, ">", b) : console.log( a, "<", b);
+
+  //CORREZIONE
+  if(a>b){
+    console.log(a , "maggiore di", b);
+  }else if(a<b){
+    console.log(b, "emaggiore di", a);
+  }else{
+    console.log( a ,"è uguale a" ,b)
+  }
 }
 
 /* ESERCIZIO 2
@@ -14,7 +23,7 @@
 */
 {
   let x = 5;
-  if(x != 5){
+  if(x !== 5){
   console.log("not equal")
   }
 }
@@ -25,7 +34,7 @@
 */
 {
   let x = 3;
-  if( x%5 == 0){
+  if( x%5 === 0){
   console.log(x ,"divisibile per 5")
   }else{
     console.log(x ,"non è un multiplo di 5")
@@ -54,7 +63,7 @@
   let totalShoppingCart = 60;
   let spedizione = 10;
 
-  if(totalShoppingCart >= 50){
+  if(totalShoppingCart > 50){
     console.log("il tuo saldo supera i 50 euro, la spedizione sarà gratuita")
   }else{
     console.log("il saldo totale è : ", totalShoppingCart + spedizione, "euro")
@@ -71,7 +80,7 @@
   let totalShoppingCart = 100;
   let spedizione = 10;
 
-  if(totalShoppingCart-(totalShoppingCart*0.2) >= 50){
+  if(totalShoppingCart-(totalShoppingCart*0.2) > 50){
     console.log("il tuo saldo supera i 50 euro, la spedizione sarà gratuita", totalShoppingCart )
   }else{
     console.log("il saldo totale è : ", totalShoppingCart + spedizione, "euro")
@@ -87,6 +96,22 @@
   //ci ho messo troppo!
   let x = 52, y = 21 , z = 3;
 
+  //----CORREZIONE-------
+  let arr =[x];
+  if(x > y){
+    arr.unshift(y);
+  }else{
+    arr.push(y);
+  }
+
+  if(z > x && z >y){
+    arr.unshift(z);
+  }else if( z <x && z< y){
+    arr.push(z);
+  }else if ( z > x && z < y){
+    arr.splice(1, 0, z);
+  }
+//--------------------------
   if (x>y && x>z){
     if (y>z)
     {
@@ -117,12 +142,6 @@
       console.log(z,y,x);
     }
   }        
-
-
-
-
-
-  
 
   array=[x,y,z];
 
