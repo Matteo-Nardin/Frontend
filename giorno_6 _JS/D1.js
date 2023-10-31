@@ -64,8 +64,16 @@ if (name1 === name2){
   console.log("i nomi son diversi");
 };
 
-if (name1.toLocaleLowerCase === name2.toLocaleLowerCase){
+if (name1.toLowerCase === name2.toLowerCase){
   console.log("I nomi sono uguali");
 }else{
   console.log("i nomi son diversi");
 };
+
+let z = prompt("dimmi il tuo nome");
+Number(x)
+parseInt(x)
+parseFloat(x)
++x
+
+confirm()
