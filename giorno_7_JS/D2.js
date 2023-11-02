@@ -247,6 +247,8 @@ console.log(me.skills);
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
 
+//CORREZIONE
+// array[array-1]=100;
 array.pop();
 array.push(100);
 // array.splice( array.length-1, 1, 100);
