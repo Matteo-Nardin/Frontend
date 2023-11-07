@@ -70,7 +70,7 @@ console.log(shoppingCart);
 // function maxShoppingCart(cart){
 //     for(let i = 0; i<cart.length; i++){
 //         for(let j = 0; j < (cart.length - i - 1); j++){
-//             if (cart[j].price > cart[j+1].price) { 
+//             if (cart[j].price < cart[j+1].price) { 
 //                 let temporaneo = cart[j].price 
 //                 cart[j].price = cart[j+1].price 
 //                 cart[j+1].price = temporaneo
@@ -94,31 +94,63 @@ console.log(latestShoppingCart(shoppingCart))
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
- La funzione è composta da un ciclo che stampa un numero casuale tra 0 e 9 finchè il numero casuale non è maggiore di x per tre volte di fila.
+ La funzione è composta da un ciclo che stampa un numero casuale tra 0 e 9 finchè il numero casuale(generato dentro) non è maggiore di x per tre volte di fila.
 */
-let x = Math.floor(Math.random()*10);
-console.log(x);
 
-function loopUntil(n){
-    for(let i=0; i<n; i++){
+// let x = Math.floor(Math.random()*10);
+// console.log("x =",x);
 
-        if(y === 3){}
-        y = Math.floor(Math.random()*10);
-    }
-}
+// function loopUntil(n){
+//     let k = 0;
+//     let y;
+//     while(k<3){
+//         y = Math.floor(Math.random()*10);
+//         console.log(y);
+//         if(y > n){
+//             k++;
+//         }
+//     }
+// }
+// loopUntil(x);
 
-loopUntil(x);
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
-
-/* SCRIVI QUI LA TUA RISPOSTA */
+d=[2,3,"2",5];
+function average(arr){
+    let x = 0;
+    let y = 0;
+    for(let i=0; i< arr.length; i++){
+        if(typeof arr[i] === "number"){
+            x += arr[i];
+            y += 1;
+        }
+    }
+    console.log(x/y);
+}
+average(d);
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
+s = ["a", "abcdf", "abc"];
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function longest(arr){
+    for(let i = 0; i<arr.length; i++){
+
+        for(let j = 0; j <arr.length -i -1; j++){
+            if(arr[j].length < arr[j+1].length){
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+        console.log(arr[i], "è composto da ", arr[i].length, "stringhe");
+    }
+    return (arr[0]);
+}
+
+console.log(longest(s));
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
