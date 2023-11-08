@@ -9,6 +9,7 @@ function chain(s1,s2){
 
     x = arr1.slice(0,2).concat(arr2.slice(-3, arr2.length));
     // x = [...arr1,...arr2]
+    // return (arr1.slice(0,2).concat(arr2.slice(-3, arr2.length))).toUpperCase()
     // la destrutturazione non lavora sull'array originale concat invece si
 
     return x.join("").toUpperCase();
@@ -37,13 +38,20 @@ console.log(rand());
 */
 let arr = [1,4,5,6,8];
 
-console.log(arr.filter((x) => x%2 === 0));
+const getPari = (myArr) => {
+  return arr.filter((x) => x%2 === 0)
+}
+console.log(getPari(arr));
+
+// non è una funzione!!!
+// console.log(arr.filter((x) => x%2 === 0));
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
-let tot = 0;
+
 function somma(arr){
+    let tot = 0;
     arr.forEach(element => {
     // arr += element;
     tot += element;
@@ -81,8 +89,14 @@ console.log(arr1);
 */
 str = ["EPICODE", "is", "great"];
 
-let l = str.map((x) => x.length);
-console.log(l);
+function getStrLenght(arr){
+  let l = str.map((x) => x.length);
+  return l;
+}
+
+// non è una funzione!!!
+// let l = str.map((x) => x.length);
+console.log(getStrLenght(str));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
@@ -90,6 +104,8 @@ console.log(l);
 // function odd(){
 //     forEach(x => x%2 !==0)
 // }
+
+
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
   {
@@ -215,6 +231,10 @@ let sortAge = movies.sort((p1,p2) =>{
 console.log(sortAge)
 
 movies.forEach((val, i) =>{
+  // let old = arr[0];
+  // if(film.Year < old.Year){
+  //   old = film;
+  // }
     console.log(val.Title, ",uscita: " + val.Year);
     console.log(i);
     // console.log(val.Year.sort());
@@ -222,24 +242,31 @@ movies.forEach((val, i) =>{
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
-let t = movies.forEach((val, i) =>{
-    i += 1;
-    // console.log("totale film: ", i);
-})
-console.log(t)
+// let t = movies.forEach((val, i) =>{
+//     i += 1;
+//     // console.log("totale film: ", i);
+// })
+// console.log(t)
+
+let countFilm = (arr) => arr.length
+console.log(countFilm(movies))
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
-let title = movies.map(val =>{  
-    return val.Title;
-})
+// let title = movies.map(val =>{  
+//     return val.Title;
+// })
 
-console.log(title);
+function filmTitle(arr){
+  return arr.map(film => film.Title)
+}
+console.log(filmTitle(movies));
+
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
-let m = movies.filter((val) => val.Year >= 2000);
+let m = movies.filter(val => val.Year >= 2000);
 console.log(m);
 
 // const millenium = movies.filter(function(obj){
