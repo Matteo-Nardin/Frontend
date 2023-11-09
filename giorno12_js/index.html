@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <h2 style="margin:5px">To Do List</h2>
+        <input type="text" id="myInput" placeholder="add task">
+        <button onclick="newItem()" class="addBtn">Add</button>
+      </div>
+      
+      <ul id="ul">
+      
+      </ul>
+
+    <!-- <button onclick="funClick()">bottone</button>
+    <button id="btn2">bottone</button>
+    <button id="btn3">bottone</button> -->
+</body>
+<script>
+    let close = document.getElementsByClassName("close");
+    function newItem() {
+        let li = document.createElement("li");
+        let inputValue = document.getElementById("myInput").value;
+        // let t = document.createTextNode(inputValue);
+        // console.log(t);
+
+        li.innerText = inputValue;
+        
+        
+        document.getElementById("ul").appendChild(li);
+        
+        //reset dell'input una volta che ripremo
+        document.getElementById("myInput").value = "";
+
+        let remove = document.createElement("button");
+
+        remove.innerText = "X";
+
+        remove.className = "close";
+
+        li.appendChild(remove);
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+            let div = this.parentElement;
+            div.style.display = "none";
+            }
+        }
+    }
+
+
+
+
+
+
+    // function funClick(){ console.log(click)};
+
+    // let btn2 = document.querySelector("#btn2");
+    // btn2.onclick= funClick;
+
+    // let btn3 = document.querySelector("#btn3");
+    // btn3.addEventListener("click", funClick);
+</script>
+</html>

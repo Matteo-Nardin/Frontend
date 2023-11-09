@@ -80,6 +80,7 @@
       </h3>
     </footer>
     <script>
+      console.log(Math.random())
       /* ESERCIZIO 1
        Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
     */
@@ -164,21 +165,31 @@
        Scrivi una funzione che renda verde il background di ogni lista non ordinata
       */
 
-      // const paintItGreen = function () {
+      const paintItGreen = function () {
       //   let q = document.querySelectorAll("ul");
       //   q.style.backgroundColor = "green";
-      // }
-      // paintItGreen();
+        const ulList = document.querySelectorAll('ul');
+        ulList.forEach(ele => ele.style.backgroundColor = 'green')
+
+      }
+      paintItGreen();
 
       /* ESERCIZIO 9
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
       */
 
       const makeItClickable = function () {
-        let q = document.querySelector("h1");
-        let x = q.innerText.split("");
-        x.pop();
-        q.innerText= x.join("");
+        //non serve split 
+
+        // let q = document.querySelector("h1");
+        // let x = q.innerText.split("");
+        // x.pop();
+        // q.innerText= x.join("");
+
+        const h1 = document.querySelector('div > h1');
+        let txt = h1.innerText;
+        txt = txt.slice(0, -1)
+        h1.innerText = txt;
 
       }
 
@@ -201,7 +212,23 @@
       const generateTable = function () {
         let q = document.querySelector("#tableArea");
         let table = document.createElement("table");
-        q.appendChild(table);
+        let t = q.appendChild(table);
+        let qt = document.querySelector("table");
+
+        let tr = document.createElement("tr");
+        let th = document.createElement("th");
+        th.innerText = "immagine";
+
+        // x = ["immagine", "nome prodotto", "quantità", "prezzo"];
+        // // x.forEach(x => document.createElement("th").innerText = x);
+        // for( v of x ){
+        //   let y = document.createElement("p").innerText = v;
+        //   // console.log(y);
+        //   // q deve cambiare, doppio ciclo?
+        //   q.appendChild(y);
+        // }
+
+        
       }
       generateTable();
       /* ESERCIZIO 12
@@ -225,7 +252,7 @@
         // ciclo 
         let rgb =[];
         for(let i=0; i<3; i++){
-          rand = Math.floor(Math.random()*255);
+          rand = Math.floor(Math.random()*256);
           rgb.push(rand);
 
         }
@@ -245,29 +272,33 @@
       Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
     */
 
-      const deleteVowels = function () {
-        let vocals =["a","e","i","o","u"];
-        let q = document.getElementsByTagName('body')['0'].innerText;
-        // q.split();
-        // console.log(q);
-        // vocals.forEach(elements => elements === q? console.log("v"):q )
+    const deleteVowels = function () {
+    let all = document.querySelectorAll("h1, h2, h3, li, a, p, th, td")
+    all.forEach(node => {
+        //console.log(node.innerText)
+        let arrChar = [...node.innerText]
+        //console.log(arrChar)
+        let arrCharFilter = arrChar.filter(char => {
+            char = char.toLowerCase();
+            return char !== 'a' && char !== 'e' && char !== 'i' && char !== 'o' && char !== 'u' && char !== 'y'
+        })
+        //console.log(arrCharFilter)
+        let testo = arrCharFilter.join("")
+        //console.log(testo)
 
-        for(x of q){
-          for(y of vocals){
-            if(x === y){
-              // console.log(x);
-              x.slice(0,1);
-              console.log(q)
-            }
-          }
-          
-        }
+        node.innerText = testo
 
-        console.log(typeof q);
-       
-      }
+        // Soluzione 2
+        /* let txt = [...node.innerText].filter(char => {
+            char = char.toLowerCase();
+            return char !== 'a' && char !== 'e' && char !== 'i' && char !== 'o' && char !== 'u' && char !== 'y'
+        }).join("") 
+        node.innerText = txt*/
+        //console.log(txt)
+    })
+};
 
-      deleteVowels();
+deleteVowels() 
 
       function noVowels(string, replaceWith) {
         return string.split(/[aeiou]/).join(replaceWith)
