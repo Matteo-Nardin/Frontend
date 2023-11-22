@@ -210,3 +210,39 @@ footer {
 footer a {
     color: fuchsia;
 }
+
+
+@media print{
+    header nav,
+    header img,
+    iframe,
+    main article img,
+    main article i .fas,
+    article section,
+    aside,
+    footer,
+    .social,
+    .to-top
+    {
+        display: none;
+    }
+    body{
+        font-size: 1.3em;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    main h2{
+        font-size: 2em;
+        font-weight: bold;
+    }
+    h1 + p{
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    main, header{
+        box-shadow: none;
+        padding: 0;
+    }
+
+    
+
+}
