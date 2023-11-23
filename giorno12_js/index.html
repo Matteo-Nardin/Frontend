@@ -34,15 +34,13 @@
             //reset dell'input una volta che ripremo
             document.getElementById("myInput").value = "";
 
-            li.addEventListener("click", function(e) {
-                    // let barred = "line-through";
-                    // li.style.textDecoration = barred;
-                    //this.classList.toggle("barred")
-
-                    //e.target.className = "barred"
-                    //devo creare comunque una classe barred
-                    e.target.className = e.target.className === "barred" ? "" : "barred"
-                    
+            if(inputValue !== ""){}
+            li.addEventListener("click", function() {
+                    if(li.style.textDecoration === "line-through"){
+                        li.style.textDecoration = ""
+                    }else{
+                        li.style.textDecoration = "line-through";
+                    }
             })
 
             //--------------------------------------------------------

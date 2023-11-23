@@ -1,0 +1,137 @@
+.container{
+    display: flex;
+}
+header{
+    background-color: blanchedalmond;
+}
+nav{
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+nav div{
+    background-color: yellow;
+    border-radius: 100px;
+    border: none;
+    padding: 10px 30px;
+    margin: 10px;
+    /* min-width: 85px; */
+    text-align: center;
+}
+nav div a{
+    text-decoration: none;
+    color: black;
+    
+}
+
+#shopLogo{
+    display: flex;
+    justify-content: center;
+}
+#shopLogo p{
+    padding: 0 20px;
+}
+
+/* ----------ASIDE------------- */
+aside{
+    margin: 10px;
+}
+.cards{
+    background-color: blanchedalmond;
+    border-radius: 30px;
+    margin: 10px;
+    width: 200px;
+    /* height: 300px;
+    width: 200px; */
+    text-align: center;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+    border-radius: 30px 30px 0 0;
+}
+
+.textCard{
+    padding: 10px;
+}
+
+button{
+    background-color: yellow;
+    border-radius: 100px;
+    border: none;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+}
+
+.flexCards{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.textCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* --------------ARTICLE--------------- */
+article{
+    margin:10px;
+}
+.article{
+    background-color: blanchedalmond;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 500px){
+    .container{
+        flex-direction: column;
+    }
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #shopLogo{
+        flex: 100%;
+    }
+    nav div{
+        flex: 1;
+        min-width: 85px;
+    }
+    aside{
+        text-align: center;
+    }
+    .flexCards{
+        justify-content: center;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 800px){
+    .container{
+        flex-direction: column;
+    }
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #shopLogo{
+        order: 3;
+    }
+    nav div:nth-child(2){
+        order: 1
+    }
+    nav div:nth-child(3){
+        order: 2
+    }
+    nav div:nth-child(4){
+        order: 4
+    }
+    nav div:nth-child(5){
+        order: 5
+    }
+    .cards{
+        width: 40%;
+    }
+}
