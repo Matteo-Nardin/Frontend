@@ -1,0 +1,33 @@
+#flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.post{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    box-shadow: 2px 4px 9px #6c6c6c;
+
+    background-color:aliceblue;
+    /* transform: translate(10px, 10px) rotate(3deg); */
+    transition: transform 1s, box-shadow 1s;
+
+    animation-name: fall;
+    animation-duration: 2s;
+}
+.post:hover{
+    /* animation-name: pick;
+    animation-duration: 2s; */
+    transform: scale(1.2) rotate(0deg);
+    box-shadow: 9px 11px 20px 9px #6c6c6c;
+
+}
+
+/* @keyframes pick {
+    to {transform: scale(1.2) rotate(0deg);box-shadow: 9px 11px 20px 9px #6c6c6c;}
+} */
+
+/* @keyframes fall {
+    from {transform: scale(4) translate(10px, 10px);}
+    to {transform: scale(1) translate(10px, 10px) rotate(3deg);}
+} */
