@@ -1,0 +1,17 @@
+// bool
+$media: true;
+//map
+$set-colori: (blu: blue, rosso: red);
+//string
+$colore: "#fff";
+//number
+$size: 1em;
+
+//richiamo la variabile colore
+body{
+    background-color: $colore;
+   
+}
+
+@import "colori";
+@import "mixinsGenerici";

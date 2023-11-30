@@ -1,0 +1,25 @@
+@mixin floating($radius, $shadow, $border){
+    border-radius: $radius;
+    box-shadow: $shadow;
+    border: $border;
+}
+
+
+
+.showcase-content{
+    img{
+        @include floating(30px, 10px 5px 5px red, 5px solid black);
+    }
+}
+
+.line-4{
+    img{
+        @include floating(50%, 4px 4px 5px blue, 0);
+    }
+}
+
+@mixin grid($element){
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 33vw;
+}

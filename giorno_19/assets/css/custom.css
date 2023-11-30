@@ -13,3 +13,8 @@
 .rounded{
     border-radius: 10px;
 }
+.top-right{
+    top: 2%;
+    right: 2%;
+    padding: 10px 20px;
+}

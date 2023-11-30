@@ -1,0 +1,28 @@
+body {
+  background-color: "#fff";
+}
+
+.btn-primary {
+  color: #f4f4f4;
+  background-color: #0e6cff;
+}
+
+.btn-secondary {
+  background-color: #ff8700;
+}
+
+.btn-tertiary {
+  background-color: #4caf50;
+}
+
+.showcase-content img {
+  border-radius: 30px;
+  box-shadow: 10px 5px 5px red;
+  border: 5px solid black;
+}
+
+.line-4 img {
+  border-radius: 50%;
+  box-shadow: 4px 4px 5px blue;
+  border: 0;
+}/*# sourceMappingURL=style.css.map */
