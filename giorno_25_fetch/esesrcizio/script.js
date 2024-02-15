@@ -1,23 +1,5 @@
 let key ="JudwfA0cNHobeB0iTH1vjq35uLTXplh3FsdHiPOYvHsy6lPc3UMQQYnZ";
 
-
-// async function func() {
-//     let arr = [];
-//     await fetch("https://api.pexels.com/v1/search?query=cat",
-//         {               
-//             method: "GET",
-//             headers: {
-//                 Authorization: "JudwfA0cNHobeB0iTH1vjq35uLTXplh3FsdHiPOYvHsy6lPc3UMQQYnZ",
-//             }
-//         })
-//         .then(response => response.json())
-//         .then(json => console.log(json))
-//         .catch(err => console.log(err))
-//     console.log(arr)
-// }
-
-
-
 let load = document.querySelector(".load");
 console.log(load)
 let immages = document.querySelectorAll("img");
@@ -28,10 +10,13 @@ let body = document.querySelector("body");
 let btnSearch = document.querySelector(".search");
 console.log(immages)
 
+let title = document.querySelectorAll(".card-title");
+let arr = [];
+
 load.addEventListener("click", ()=>{
     console.log("load")
 
-    fetch("https://api.pexels.com/v1/search/?page=1&per_page=12&query=cat",
+    fetch("https://api.pexels.com/v1/search/?page=1&per_page=2&query=cat",
         {               
             method: "GET",
             headers: {
@@ -42,53 +27,53 @@ load.addEventListener("click", ()=>{
         .then(json => {
             console.log(json);
 
-            // json.photos.forEach(element => {
-            //     console.log(immages.attributes.src.value)
-            //     immages.attributes.src.value = element.src.small
 
-            //     immages.forEach(x =>{
-            //         x.src = element.src.small
-            //     })
-            //     immages[0].src = element.src.small
+            json.photos.forEach((element, i)=> {
+                immages[i].src = element.src.small;
+                ids[i].innerText = element.id;
+            });
 
-            //     // console.log("src?")
-            //     // console.log(immages.src)
-            //     // console.log(element.src.small)
-            // });
-            // immages.forEach(x =>{
-            //     x.src = json.photos.src.small
-            // })
+            sessionStorage.setItem("cat", JSON.stringify(json));
+            // uguale a console.log(json)
+            console.log(JSON.parse(sessionStorage.getItem("cat")))
+            // equivalente for classico
 
-            // voio divessoooo
-            for(let i=0; i<immages.length; i++){
-                immages[i].src = json.photos[i].src.small;
-                console.log(json.photos[i].id)
-                console.log(ids[i].innerText)
-                ids[i].innerHTML = json.photos[i].id;
-            }
-           
-
+            // for(let i=0; i<immages.length; i++){
+            //     immages[i].src = json.photos[i].src.small;
+            //     console.log(json.photos[i].id)
+            //     console.log(ids[i].innerText)
+            //     ids[i].innerHTML = json.photos[i].id;
+            // }        
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
 
-        
 })
 document.addEventListener("DOMContentLoaded", (e)=>{
     body.addEventListener("click", (e)=>{
-                e.preventDefault();
-                // vorrei trovare un modo per non mettere tutta la classe
-                if(e.target.className === "btn btn-sm btn-outline-secondary hide"){
-                    console.log(e.target.parentNode.parentNode);
-                    e.target.closest(".card").remove();
-                }       
-            });
+        e.preventDefault();
+        // vorrei trovare un modo per non mettere tutta la classe
+        if(e.target.className === "btn btn-sm btn-outline-secondary hide"){
+            console.log(e.target.parentNode.parentNode);
+            e.target.closest(".col-md-4").remove();
+        }           
+        if(e.target.className === "link" || e.target.className === "card-title"){
+            console.log(e.target.className);
+            //let id = e.taget.
+            //window.location.assign("./details.html?picId=" + id);
+
+
+            let obj = JSON.parse( sessionStorage.getItem("immages"));
+            console.log( obj.photos[0].photographer_id );
+            // if(immages === )
+        }           
+    });
 })
 
 //non mi piace granché
 btnSearch.addEventListener("click", ()=>{
     let input = document.querySelector(".form-control").value;
     console.log(input)
-    fetch(`https://api.pexels.com/v1/search?query=${input}`,
+    fetch(`https://api.pexels.com/v1/search/?page=1&per_page=2&query=${input}`,
         {               
             method: "GET",
             headers: {
@@ -98,12 +83,19 @@ btnSearch.addEventListener("click", ()=>{
         .then(response => response.json())
         .then(json => {
             console.log(json);
-            for(let i=0; i<immages.length; i++){
-                immages[i].src = json.photos[i].src.small;
-                console.log(json.photos[i].id)
-                console.log(ids[i].innerText)
-                ids[i].innerHTML = json.photos[i].id;
-            }
+
+            // francamente non vorrei salvare nello session storage ma non trovo altro modo
+            sessionStorage.setItem("immages", JSON.stringify(json));
+            
+            displayImg(json);
+            
         })
         .catch(err => console.log(err))
 })
+
+function displayImg(json){
+    json.photos.forEach((element, i)=> {
+        immages[i].src = element.src.small;
+        ids[i].innerText = element.id;
+    });
+}
